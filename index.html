@@ -19,8 +19,8 @@
             const player = ruffle.createPlayer();
             const container = document.getElementById("flash-container");
             container.appendChild(player);
-            // CAMBIA "tu_archivo.swf" por el nombre exacto de tu archivo subido
-            player.load("./filias2.swf"); 
+// Versión mejorada para obligar al navegador a buscar el archivo
+            player.load({ url: "filias2.swf" }); 
         });
     </script>
 </body>
