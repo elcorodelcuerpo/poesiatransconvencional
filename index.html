@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Proyecto Flash</title>
+    <!-- Cargamos el emulador Ruffle para que funcione en 2026 -->
+    <script src="https://unpkg.com"></script>
+    <style>
+        body { margin: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #flash-container { width: 800px; height: 600px; } /* Ajusta el tamaño de tu animación aquí */
+    </style>
+</head>
+<body>
+    <div id="flash-container"></div>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("flash-container");
+            container.appendChild(player);
+            // CAMBIA "tu_archivo.swf" por el nombre exacto de tu archivo subido
+            player.load("filias2.swf"); 
+        });
+    </script>
+</body>
+</html>
