@@ -1,57 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi Proyecto Flash</title>
-    <style>
-        body { 
-            margin: 0; 
-            background: #000; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-        }
-        /* Contenedor principal */
-        #wrapper {
-            position: relative;
-            width: 800px;  /* Ajusta al ancho original de tu animación */
-            height: 600px; /* Ajusta al alto original de tu animación */
-        }
-        #flash-container { 
-            width: 100%; 
-            height: 100%; 
-        }
-        /* El parche negro que tapará el texto */
-        #parche-tapatexto {
-            position: absolute;
-            bottom: 10px;   /* Distancia desde el borde inferior */
-            right: 10px;    /* Distancia desde el borde derecho */
-            width: 180px;   /* Ancho del recuadro negro (ajústalo si el texto es más largo) */
-            height: 30px;   /* Alto del recuadro negro */
-            background-color: #000000; /* Color negro puro (cámbialo si tu fondo es de otro color) */
-            pointer-events: none; /* Permite que el usuario pueda hacer clic a través del parche si hay un botón abajo */
-            z-index: 9999;  /* Obliga al parche a estar siempre por encima de la animación */
-        }
-    </style>
-</head>
-<body>
+<div style="position: relative; width: 800px; height: 600px; margin: 0 auto; background: #ffffff;">
+    
+    <!-- Carga tu animación original desde tu carpeta de GitHub -->
+    <object data="https://github.com" type="application/x-shockwave-flash" width="100%" height="100%">
+        <param name="movie" value="https://github.com" />
+        <param name="autoplay" value="true" />
+    </object>
 
-    <div id="wrapper">
-        <!-- Tu animación Flash -->
-        <div id="flash-container">
-            <object data="filias2.swf" type="application/x-shockwave-flash" width="100%" height="100%">
-                <param name="movie" value="filias2.swf" />
-                <param name="autoplay" value="true" />
-            </object>
-        </div>
-        
-        <!-- Bloque visual que tapa el texto inferior derecho -->
-        <div id="parche-tapatexto"></div>
-    </div>
+    <!-- RECUADRO BLANCO QUE TAPA TU NOMBRE EN LA ESQUINA INFERIOR DERECHA -->
+    <div style="position: absolute; bottom: 0; right: 0; width: 250px; height: 40px; background-color: #ffffff; z-index: 9999; pointer-events: none;"></div>
 
-    <!-- Emulador Ruffle -->
-    <script src="https://unpkg.com"></script>
-
-</body>
-</html>
+</div>
